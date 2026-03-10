@@ -57,6 +57,11 @@ class Adaboost:
                 if row["cumsum_upper"] > a and a > row["cumsum_lower"]:
                     indices.append(index)
         return indices
+       # indices = np.random.choice(
+   # self.df.index,
+    #size=len(self.df),
+    #p=self.df["weights"]
+      #  )
     
     def alpha_calculate(self):
 
@@ -111,4 +116,5 @@ for i in range(len(dts)):
     model = dts[i]
     ans += alphas[i] * model.predict(query)
     
+
 print(np.sign(ans))
